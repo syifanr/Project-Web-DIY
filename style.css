@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,700&display=swap');
+
+html{
+    height: 100vh;
+    font-size: larger;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: 'Tinos', serif;
+}
+
+.title-cont{
+    color: white;
+    background-color: rgb(125, 95, 95);
+    text-align: center;
+    padding: 20px 0;
+}
+
+#title{
+    font-size: 45px;
+    margin-bottom: 12px;
+}
+
+nav{
+    background-color: rgb(232, 221, 207);
+}
+
+.btn-group{
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    column-gap: 10px; 
+}
+
+.btn-navbar{
+    color: black;
+    text-decoration: none;
+    display: block;
+    padding: 20px;
+    font-size: 20px;
+    width: 200px;
+    text-align: center;
+}
+
+.btn-navbar:hover{
+    color: white;
+    text-decoration: underline;
+    background-color: rgb(125, 95, 95);
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 22px 0;
+    row-gap: 25px;
+}
+
+.article-card{
+    width: 80%;
+    border: 3px rgb(125, 95, 95)solid ;
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+.image{
+    display: flex;
+    width: 100%;
+    transition: 2s;
+}
+
+.image img{
+    width: 100%;
+}
+.wrapper{
+    width: 800px;
+    margin: auto;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+#slide-1:target ~ .image{
+    margin-left: 0px;
+}
+
+#slide-2:target ~ .image{
+    margin-left: -100%;
+}
+
+#slide-3:target ~ .image{
+    margin-left: -200%;
+}
+
+#slide-4:target ~ .image{
+    margin-left: -300%;
+}
+
+.navigation a{
+    display: inline-block;
+    height: 25px;
+    width: 25px;
+    background-color: aliceblue;
+    font-size: 0px;
+    border-radius: 50%;
+    margin: 3px;
+    transition: 1s;
+}
+
+.navigation a:hover{
+    background-color: #666;
+}
+
+.navigation{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin-top: -50px;
+}
+
+.article-card figure{
+    margin: 0 auto;
+}
+
+.article-card figcaption{
+    text-align: center;
+}
+
+.article-card h3{
+    text-align: center;
+}
+
+.article-card figure img{
+    width: 85%;
+    height: 400px;
+    object-fit: cover;
+    object-position: top;
+}
+
+footer{
+    background-color: rgb(125, 95, 95);
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    padding: 20px;
+}
+
+@media only screen and (max-width: 1024px) {
+    .btn-group{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .wrapper{
+        width: 90%;
+    }
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 15px;
+    align-items: flex-start;
+    padding: 5px 5%;
+}
+
+.container .main-video {
+    background: #fff;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.container .main-video video{
+    width: 100%;
+    border-radius: 5px;
+}
+
+.container .main-video .title{
+    color: #333;
+    font-size: 23px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.container.video-list{
+    border-radius: 5px;
+    height: 520px;
+    overflow-y: scroll;
+    background: #fff;
+}
+
+.container .video-list .vid video{
+    width: 100px;
+    border-radius: 5px;
+}
+
+.container.video-list::-webkit-scrollbar{
+    width: 7px;
+}
+
+.container.video-list::-webkit-scrollbar-track{
+    border-radius: 50px;
+    background: #ccc;
+}
+
+.container.video-list::-webkit-scrollbar-thumb{
+    border-radius: 50px;
+    background: #666;
+}
+
+.container.video-list .vid video{
+    width: 100px;
+    border-radius: 5px;
+}
+
+.container.video-list .vid{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, .1);
+    cursor: pointer;
+    background: #f7f7f7;
+}
+
+.container.video-list .vid:hover{
+    background: #eee;
+}
+
+.container.video-list .vid.active{
+    background: #2980b9;
+}
+
+.container.video-list .vid.active .title{
+    color: #fff;
+}
+
+.container.video-list .vid .title{
+    color: #333;
+    font-size: 17px;
+}
+
+@media (max-width: 991px){
+    .container{
+        grid-template-columns: 1.5 fr 1fr;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 768px){
+    .container{
+        grid-template-columns: 1fr;
+    }
+}
